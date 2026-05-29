@@ -1,0 +1,21 @@
+---
+interface Props {
+  alt: string;
+}
+
+const { alt } = Astro.props;
+---
+
+<div class="self-center md:self-start basis-1/2">
+  <video
+    src="/ems-light.mp4"
+    class="dark:hidden"
+    autoplay
+    loop
+    muted
+    playsinline
+  >
+  </video>
+
+  <img src="/ems-dark.png" alt={alt} class="hidden dark:inline-block" />
+</div>

@@ -1,0 +1,432 @@
+<style>
+  .accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 350ms;
+  }
+
+  .accordion-content[aria-hidden="false"] {
+    grid-template-rows: 1fr;
+  }
+
+  .accordion-content > div {
+    overflow: hidden;
+  }
+
+  .accordion-panel {
+    background-color: transparent;
+    transition: background-color 300ms;
+  }
+
+  .accordion-panel:hover {
+    background-color: var(--color-background3) !important;
+    transition: 200ms ease-in-out;
+  }
+
+  .accordion-panel.open {
+    background-color: var(--color-background3);
+  }
+
+  .accordion-panel h2 {
+    margin-bottom: 0;
+  }
+
+  .accordion-panel.open h2 {
+    margin-bottom: 1rem;
+  }
+
+  /* Arrow icon rotation  */
+  .accordion-panel svg {
+    transition: transform 300ms ease-in-out;
+    transform-origin: center;
+  }
+
+  .accordion-panel.open svg {
+    transform: rotate(180deg);
+  }
+
+  .accordion-panel:first-child.open svg {
+    transform: rotate(180deg);
+  }
+
+  svg, h2 {
+    cursor: pointer;
+  }
+
+  .accordion-content p {
+    cursor: text;
+  }
+</style>
+
+<div id="wrapper" class="grow grid gap-y-2">
+  <div class="accordion grid gap-2">
+    <div
+      class="accordion-panel open grid grid-cols-[auto,1fr] gap-x-3 p-6 rounded-xl"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="text-black dark:text-white"
+      >
+        <title>Chevron Down Icon</title>
+        <path
+          d="M7.41 8.295L12 12.875L16.59 8.295L18 9.705L12 15.705L6 9.705L7.41 8.295Z"
+          class="fill-current"></path>
+      </svg>
+
+      <div>
+        <h2 id="panel1-title" class="text-lg text-text font-semibold">
+          <button
+            class="accordion-trigger text-start"
+            aria-expanded="true"
+            aria-controls="panel1-content"
+            tabindex="-1"
+          >
+            What is Local-first?
+          </button>
+        </h2>
+        <div
+          class="accordion-content"
+          role="region"
+          aria-labelledby="panel1-title"
+          aria-hidden="false"
+          id="panel1-content"
+        >
+          <div>
+            <p class="text-base text-textGray2 font-normal">
+              Local-first software sets new principles for applications that
+              enable both real-time data processing and ownership for users.
+              Local-first approach opens the possibility to work offline in
+              remote areas and consolidate data from multiple on-site devices,
+              while also improving privacy, security, and user control of data.
+              At the same time, local-first system can be optionally connected
+              to the cloud for remote access and advanced features. In Enapter
+              EMS Toolkit 3.0, your <a
+                href="https://handbook.enapter.com/software/gateway_software/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Enapter Gateway (opens in a new tab)"
+                class="body-link text-textLink hover:text-textLinkHover hover:transition-colors hover:duration-300"
+                >Enapter Gateway</a
+              > becomes the source of truth for your data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="accordion-panel grid grid-cols-[auto,1fr] gap-x-3 p-6 rounded-xl"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="text-black dark:text-white"
+      >
+        <title>Chevron Down Icon</title>
+        <path
+          d="M7.41 8.295L12 12.875L16.59 8.295L18 9.705L12 15.705L6 9.705L7.41 8.295Z"
+          class="fill-current"></path>
+      </svg>
+
+      <div>
+        <h2 id="panel2-title" class="text-lg text-text font-semibold">
+          <button
+            class="accordion-trigger text-start"
+            aria-expanded="false"
+            aria-controls="panel2-content"
+            tabindex="-1"
+          >
+            What is Low-code?
+          </button>
+        </h2>
+        <div
+          class="accordion-content"
+          role="region"
+          aria-labelledby="panel2-title"
+          aria-hidden="true"
+          id="panel2-content"
+        >
+          <div>
+            <p class="text-base text-textGray2 font-normal">
+              Low-code is a development approach that allows users to create
+              applications with minimal hand-coding. In the context of Enapter
+              EMS, it enables faster and easier integration of energy devices
+              using simplified Lua scripts and YAML configurations, reducing the
+              complexity of system setup and customization.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="accordion-panel grid grid-cols-[auto,1fr] gap-x-3 p-6 rounded-xl"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="text-black dark:text-white"
+      >
+        <title>Chevron Down Icon</title>
+        <path
+          d="M7.41 8.295L12 12.875L16.59 8.295L18 9.705L12 15.705L6 9.705L7.41 8.295Z"
+          class="fill-current"></path>
+      </svg>
+
+      <div>
+        <h2 id="panel3-title" class="text-lg text-text font-semibold mb-4">
+          <button
+            class="accordion-trigger text-start"
+            aria-expanded="false"
+            aria-controls="panel3-content"
+            tabindex="-1"
+          >
+            What is Universal Communication Module (UCM)?
+          </button>
+        </h2>
+        <div
+          class="accordion-content"
+          role="region"
+          aria-labelledby="panel3-title"
+          aria-hidden="true"
+          id="panel3-content"
+        >
+          <div>
+            <p class="text-base text-textGray2 font-normal">
+              Universal Communication Module (UCM) is a hardware device that
+              acts as a translator between various energy devices and the
+              Enapter ecosystem. It runs Enapter Blueprints to integrate
+              different devices such as electrolysers, power meters, inverters,
+              batteries, and sensors into the Enapter Cloud platform using Lua
+              scripts and YAML configurations. UCMs enable seamless
+              communication and data exchange between diverse energy equipment
+              and the <a
+                href="https://handbook.enapter.com/software/gateway_software/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Enapter Gateway (opens in a new tab)"
+                class="body-link text-textLink hover:text-textLinkHover hover:transition-colors hover:duration-300"
+                >Enapter Gateway</a
+              > and Cloud through a secure wireless or wired connection.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="accordion-panel grid grid-cols-[auto,1fr] gap-x-3 p-6 rounded-xl"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="text-black dark:text-white"
+      >
+        <title>Chevron Down Icon</title>
+        <path
+          d="M7.41 8.295L12 12.875L16.59 8.295L18 9.705L12 15.705L6 9.705L7.41 8.295Z"
+          class="fill-current"></path>
+      </svg>
+
+      <div>
+        <h2 id="panel4-title" class="text-lg text-text font-semibold mb-4">
+          <button
+            class="accordion-trigger text-start"
+            aria-expanded="false"
+            aria-controls="panel4-content"
+            tabindex="-1"
+          >
+            What is Enapter Blueprint?
+          </button>
+        </h2>
+        <div
+          class="accordion-content"
+          role="region"
+          aria-labelledby="panel4-title"
+          aria-hidden="true"
+          id="panel4-content"
+        >
+          <div>
+            <p class="text-base text-textGray2 font-normal">
+              Enapter Blueprint is a pre-configured integration package for
+              specific energy device model. Blueprints simplify the process of
+              adding new devices to your energy management system by providing
+              ready-to-use configurations, control logic, and visualization
+              templates. The <a
+                href="https://marketplace.enapter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Enapter Blueprint Marketplace (opens in a new tab)"
+                class="body-link text-textLink hover:text-textLinkHover hover:transition-colors hover:duration-300"
+                >Enapter Blueprint Marketplace</a
+              > offers a wide range of integrations for more than 50 device vendors.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="accordion-panel grid grid-cols-[auto,1fr] gap-x-3 p-6 rounded-xl"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="text-black dark:text-white"
+      >
+        <title>Chevron Down Icon</title>
+        <path
+          d="M7.41 8.295L12 12.875L16.59 8.295L18 9.705L12 15.705L6 9.705L7.41 8.295Z"
+          class="fill-current"></path>
+      </svg>
+
+      <div>
+        <h2 id="panel5-title" class="text-lg text-text font-semibold mb-4">
+          <button
+            class="accordion-trigger text-start"
+            aria-expanded="false"
+            aria-controls="panel5-content"
+            tabindex="-1"
+          >
+            What is Enapter LINK?
+          </button>
+        </h2>
+        <div
+          class="accordion-content"
+          role="region"
+          aria-labelledby="panel5-title"
+          aria-hidden="true"
+          id="panel5-content"
+        >
+          <div>
+            <p class="text-base text-textGray2 font-normal">
+              Enapter LINK is a wired bus communication system introduced in the
+              2nd generation (M2) of Universal Communication Modules. This new
+              feature allows UCMs to be directly wired to the <a
+                href="https://handbook.enapter.com/software/gateway_software/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Enapter Gateway (opens in a new tab)"
+                class="body-link text-textLink hover:text-textLinkHover hover:transition-colors hover:duration-300"
+                >Enapter Gateway</a
+              >, providing an alternative to the previous WiFi-only
+              connectivity. Enapter LINK enhances the reliability and security
+              of device communication within the energy management system,
+              especially in environments where wireless connections may be
+              challenging or less desirable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="accordion-panel grid grid-cols-[auto,1fr] gap-x-3 p-6 rounded-xl"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="text-black dark:text-white"
+      >
+        <title>Chevron Down Icon</title>
+        <path
+          d="M7.41 8.295L12 12.875L16.59 8.295L18 9.705L12 15.705L6 9.705L7.41 8.295Z"
+          class="fill-current"></path>
+      </svg>
+
+      <div>
+        <h2 id="panel6-title" class="text-lg text-text font-semibold mb-4">
+          <button
+            class="accordion-trigger text-start"
+            aria-expanded="false"
+            aria-controls="accordion6-content"
+            tabindex="-1"
+          >
+            What is Energy Management System (EMS)?
+          </button>
+        </h2>
+        <div
+          class="accordion-content"
+          role="region"
+          aria-labelledby="panel6-title"
+          aria-hidden="true"
+          id="panel6-content"
+        >
+          <div>
+            <p class="text-base text-textGray2 font-normal">
+              An Energy Management System (EMS) is a comprehensive platform that
+              connects, manages, and optimizes energy flows for businesses or
+              homes (HEM system). It serves as the operating system for smart
+              and responsible energy consumption and production, balancing
+              various energy sources, storage systems, and consumption patterns.
+              EMS aims to maximize efficiency, reduce costs, and minimize carbon
+              footprint by dynamically adapting to external factors such as
+              weather, energy prices, and demand forecasts. Modern EMS
+              architectures integrate intelligent networking of components,
+              including communication modules, sensors, and actuators, to enable
+              real-time optimization and predictive maintenance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const accordion = document.querySelector(".accordion");
+
+  accordion.addEventListener("click", (e) => {
+    const target = (e.target as HTMLElement).closest("h2, button, svg");
+    if (!target) return;
+
+    const activePanel = target.closest(".accordion-panel");
+    if (!activePanel) return;
+
+    toggleAccordion(activePanel);
+  });
+
+  function toggleAccordion(panelToActivate) {
+    const activeButton = panelToActivate.querySelector("button");
+    const activePanelIsOpened =
+      activeButton.getAttribute("aria-expanded") === "true";
+    const isFirstChild = panelToActivate === accordion.firstElementChild;
+
+    if (activePanelIsOpened) {
+      activeButton.setAttribute("aria-expanded", "false");
+      panelToActivate
+        .querySelector(".accordion-content")
+        .setAttribute("aria-hidden", "true");
+      panelToActivate.classList.remove("open");
+      if (isFirstChild) panelToActivate.style.backgroundColor = "transparent";
+    } else {
+      activeButton.setAttribute("aria-expanded", "true");
+      panelToActivate
+        .querySelector(".accordion-content")
+        .setAttribute("aria-hidden", "false");
+      panelToActivate.classList.add("open");
+      if (isFirstChild) {
+        panelToActivate.style.backgroundColor = "var(--color-background3)";
+      }
+    }
+  }
+</script>

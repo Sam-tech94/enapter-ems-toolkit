@@ -1,0 +1,93 @@
+---
+import HeroImage from "../components/HeroImage.astro";
+import InputForm from "../components/EmailForm.astro";
+import Layout from "../layouts/Layout.astro";
+import FAQ from "../components/FAQ.astro";
+import KeyFeatures from "../components/KeyFeatures.astro";
+import WhatsNew from "../components/WhatsNew.astro";
+import Architecture from "../components/Architecture.astro";
+
+const alt = "Illustration of Enapter EMS Toolkit 3.0";
+---
+
+<Layout
+  title="Enapter EMS Toolkit 3.0: Low-Code Energy Management System "
+  description="Discover Enapter EMS Toolkit 3.0 – an open-source, local-first, low-code platform to manage and optimize energy systems. "
+  alt={alt}
+>
+  <main
+    role="main"
+    aria-label="Main content of the page"
+    class="grow mt-8 md:mt-20"
+  >
+    <section
+      class="flex items-center flex-col-reverse gap-10 mb-20 md:mb-[120px] md:flex-row md:justify-between md:gap-20"
+      aria-label="Introduction to Enapter EMS Toolkit 3.0"
+    >
+      <div class="flex flex-col gap-6 basis-1/2 max-w-[545px]">
+        <div>
+          <h1 class="text-text text-4xl font-extrabold mb-4">
+            Enapter Energy Management System Toolkit 3.0
+          </h1>
+          <ul
+            class="flex items-center gap-2 flex-wrap"
+            aria-label="Feature categories of the Enapter EMS Toolkit 3.0"
+          >
+            <li
+              class="bg-background2Green w-fit py-1 px-2 text-xs text-text font-medium text-center uppercase rounded-md"
+              aria-label="Local-first feature"
+            >
+              Local-first
+            </li>
+            <li
+              class="bg-background2Green w-fit py-1 px-2 text-xs text-text font-medium text-center uppercase rounded-md"
+              aria-label="Low-code feature"
+            >
+              Low-code
+            </li>
+            <li
+              class="bg-background2Green w-fit py-1 px-2 text-xs text-text font-medium text-center uppercase rounded-md"
+              aria-label="Open-source feature"
+            >
+              Open-source
+            </li>
+            <li
+              class="bg-background2Green w-fit py-1 px-2 text-xs text-text font-medium text-center uppercase rounded-md"
+              aria-label="EMS feature"
+            >
+              EMS
+            </li>
+          </ul>
+        </div>
+        <p
+          class="text-textGray2 text-lg font-normal"
+          aria-label="Description of the Enapter EMS Toolkit 3.0"
+        >
+          Local-first IoT platform for energy management, enabling manufacturers
+          and developers to create smart, safe, and efficient solutions for
+          device control and optimization of energy production and consumption.
+        </p>
+        <div>
+          <div class="bg-background3 p-8 rounded-xl">
+            <h2 class="text-base text-text font-semibold mb-3">
+              Get Early Access
+            </h2>
+            <InputForm />
+            <p 
+              class="text-textGray text-sm font-normal mt-2"
+              aria-label="We will send you a message as soon as it's ready for preview access."
+            >
+              We will send you a message as soon as it's ready for preview
+              access.
+            </p>
+          </div>
+        </div>
+      </div>
+      <HeroImage alt={alt} />
+    </section>
+    <WhatsNew />
+    <KeyFeatures />
+    <Architecture />
+    <FAQ />
+  </main>
+</Layout>

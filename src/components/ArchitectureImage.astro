@@ -1,0 +1,89 @@
+<style>
+  .overflow-hidden {
+    overflow: hidden;
+  }
+</style>
+
+<div id="parentElement" data-draw-modal-open="false">
+  <img
+    id="betaImg"
+    src="/beta.png"
+    alt="Diagram illustrating the architecture of Enapter's system, showing the flow of data between UCMs, the local gateway, and the Enapter Cloud."
+    tabindex="0"
+    class="cursor-pointer"
+    width="704"
+  />
+
+  <div
+    id="modal"
+    class="hidden fixed inset-0 z-50 bg-[rgba(0,0,0)] bg-[rgba(0,0,0,0.6)]"
+    aria-modal="true"
+    role="dialog"
+  >
+    <div id="closeModalEffect" class="grid place-items-center h-screen">
+      <div
+        class="mx-4 p-6 relative bg-background2 max-w-6xl rounded-xl h-[43dvh] sm:h-[50dvh] md:h-[66dvh] lg:aspect-[4/3]"
+      >
+        <button id="closeImage" class="absolute top-2 right-2">
+          <span
+            class="material-symbols-outlined text-textGray font-bold text-sm transition cursor-pointer hover:text-textGrayHover active:text-textGrayActive duration-300"
+            >close</span
+          >
+        </button>
+        <img
+          class="w-full h-full object-contain"
+          id="img02"
+          alt="Diagram illustrating the architecture of Enapter's system, showing the flow of data between UCMs, the local gateway, and the Enapter Cloud."
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const image = document.getElementById("betaImg") as HTMLImageElement;
+  const parentElement = document.getElementById("parentElement");
+  const modalImage = document.getElementById("modal");
+  const closeImage = document.getElementById("closeModalEffect");
+  const popUpImage = document.getElementById("img02") as HTMLImageElement;
+
+  function toggleModal(event: any) {
+    const isOpen =
+      parentElement.getAttribute("data-draw-modal-open") === "true";
+    parentElement.setAttribute(
+      "data-draw-modal-open",
+      isOpen ? "false" : "true"
+    );
+    popUpImage.src = isOpen ? "" : event.target.src;
+    document.body.classList.toggle("overflow-hidden", !isOpen);
+    modalImage.classList.toggle("hidden", isOpen);
+
+    if (!isOpen) {
+      closeImage.addEventListener("click", closeModal);
+      window.addEventListener("keydown", handleKeyPress);
+    } else {
+      closeImage.removeEventListener("click", closeModal);
+      window.removeEventListener("keydown", handleKeyPress);
+    }
+  }
+
+  function closeModal(event: any) {
+    if (event.target === closeImage) {
+      toggleModal(event);
+    }
+  }
+
+  function handleKeyPress(event: any) {
+    if (event.key === "Escape") {
+      toggleModal(event);
+    }
+  }
+
+  image.addEventListener("click", toggleModal);
+
+  const closeButton = document.getElementById("closeImage");
+
+  if (closeButton) {
+    closeButton.addEventListener("click", toggleModal);
+  }
+</script>

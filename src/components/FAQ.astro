@@ -1,0 +1,33 @@
+---
+import Accordion from "./Accordion.astro";
+import DiscordIcon from "./imageComponents/DiscordIcon.astro";
+---
+
+<section
+  class="flex flex-col gap-10 lg:flex-row lg:gap-20"
+  aria-labelledby="faq-section"
+>
+  <div class="w-full lg:basis-[440px] lg:flex-shrink-0">
+    <h2 id="faq section" class="text-text text-3xl font-bold mb-4">
+      Frequently Asked Questions
+    </h2>
+    <p
+      class="text-lg text-textGray2 mb-6"
+      aria-label="Find the most commonly asked questions about EMS Toolkit 3.0. Can't find what you're looking for? Ask in our Discord community!"
+    >
+      Find the most commonly asked questions about EMS Toolkit 3.0. Can't find
+      what you're looking for? Ask in our Discord community!
+    </p>
+    <a
+      href="https://go.enapter.com/discord"
+      class="body-link group inline-flex items-center gap-x-1 py-2 px-4 border border-border text-text text-base font-semibold tracking-wide rounded-[28px] hover:border-borderHover hover:transition-colors hover:duration-200"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Ask in Discord"
+    >
+      <DiscordIcon />
+      Ask in Discord
+    </a>
+  </div>
+  <Accordion />
+</section>
