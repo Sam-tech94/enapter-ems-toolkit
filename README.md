@@ -52,13 +52,6 @@ npm run preview
 
 ---
 
-## 🌐 Deployment
-
-This project is deployed automatically to **GitHub Pages** via GitHub Actions on every push to `main`.
-
-Live URL: `https://sam-tech94.github.io/enapter-ems-toolkit`
-
----
 
 ## 📁 Project Structure
 
